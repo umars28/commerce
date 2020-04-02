@@ -16,9 +16,12 @@ use Illuminate\Support\Facades\Route;
 // Back-End
 Auth::routes();
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+
+
     Route::group(['prefix' => 'homepage'], function () {
-       
+
     });
 });
 
 Route::get('/', 'HomepageController@index')->name('homepage.index');
+Route::get('/', 'Admin\AdminController@index')->name('admin.index');
