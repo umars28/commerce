@@ -16,6 +16,7 @@ class CreateModelTable extends Migration
         Schema::create('model', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->enum('status', ['ACTIVE', 'INACTIVE']);
             $table->unsignedBigInteger('media_id')->nullable();
             $table->timestamps();
         });

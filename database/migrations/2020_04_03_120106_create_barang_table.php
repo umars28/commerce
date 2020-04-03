@@ -22,14 +22,12 @@ class CreateBarangTable extends Migration
             $table->unsignedTinyInteger('rating')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->unsignedBigInteger('media_id')->nullable();
-            $table->unsignedBigInteger('promo_id')->nullable();
             $table->enum('status',['ACTIVE','INACTIVE']);
             $table->timestamps();
         });
         Schema::table('barang', function (Blueprint $table) {
             $table->foreign('category_id')->references('id')->on('category');
             $table->foreign('media_id')->references('id')->on('media');
-            $table->foreign('promo_id')->references('id')->on('promo');
         });
     }
 
