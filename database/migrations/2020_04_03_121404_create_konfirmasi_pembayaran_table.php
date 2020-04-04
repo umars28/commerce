@@ -16,7 +16,7 @@ class CreateKonfirmasiPembayaranTable extends Migration
         Schema::create('konfirmasi_pembayaran', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('pemesanan_id')->nullable();
-            $table->enum('status', ['ACTIVE', 'INACTIVE']);
+            $table->enum('status', \App\Enums\StatusType::getValues());
             $table->timestamps();
         });
     }

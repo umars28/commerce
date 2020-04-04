@@ -17,7 +17,7 @@ class CreateFiturTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('description');
-            $table->enum('status', ['ACTIVE','INACTIVE']);
+            $table->enum('status', \App\Enums\StatusType::getValues());
             $table->timestamps();
         });
     }

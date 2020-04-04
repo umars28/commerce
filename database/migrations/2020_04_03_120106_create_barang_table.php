@@ -22,7 +22,7 @@ class CreateBarangTable extends Migration
             $table->unsignedTinyInteger('rating')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->unsignedBigInteger('media_id')->nullable();
-            $table->enum('status',['ACTIVE','INACTIVE']);
+            $table->enum('status',\App\Enums\StatusType::getValues());
             $table->timestamps();
         });
         Schema::table('barang', function (Blueprint $table) {

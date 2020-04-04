@@ -22,7 +22,7 @@ class CreateHomepagesTable extends Migration
             $table->string('button_text2')->nullable();
             $table->string('title2')->nullable();
             $table->string('subtitle2')->nullable();
-            $table->enum('status', ['ACTIVE', 'INACTIVE']);
+            $table->enum('status', \App\Enums\StatusType::getValues());
             $table->string('content_type');
             $table->unsignedBigInteger('media_id')->nullable();
             $table->unsignedBigInteger('media2_id')->nullable();

@@ -21,7 +21,7 @@ class CreatePromoTable extends Migration
             $table->date('end_date');
             $table->string('code')->unique();
             $table->bigInteger('amount');
-            $table->enum('status', ['ACTIVE','INACTIVE']);
+            $table->enum('status', \App\Enums\StatusType::getValues());
             $table->timestamps();
         });
     }

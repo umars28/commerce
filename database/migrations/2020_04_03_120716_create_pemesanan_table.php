@@ -17,7 +17,7 @@ class CreatePemesananTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('users_id')->nullable();
             $table->unsignedBigInteger('barang_id')->nullable();
-            $table->enum('status', ['ACTIVE', 'INACTIVE']);
+            $table->enum('status', \App\Enums\StatusType::getValues());
             $table->timestamps();
         });
         Schema::table('pemesanan', function (Blueprint $table) {

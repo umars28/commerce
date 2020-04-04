@@ -17,7 +17,7 @@ class CreateCategoryTable extends Migration
             $table->bigIncrements('id');
             $table->string('jenis');
             $table->unsignedBigInteger('media_id')->nullable();
-            $table->enum('status', ['ACTIVE','INACTIVE']);
+            $table->enum('status', \App\Enums\StatusType::getValues());
             $table->timestamps();
         });
         Schema::table('category', function (Blueprint $table) {

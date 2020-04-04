@@ -14,7 +14,7 @@ class AddColumnDetailUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->enum('level', ['penjual','pembeli','admin']);
+            $table->enum('level', \App\Enums\LevelType::getValues());
         });
     }
 
