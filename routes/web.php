@@ -22,6 +22,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     });
 });
-
+Route::get('mainContent/edit', 'Admin\AdminHomepageController@editMainContent')->name('homepage.editMainContent');
+Route::post('mainContent/{id}/save', 'Admin\AdminHomepageController@saveMainContent')->name('homepage.saveMainContent');
+Route::get('category/list', 'Admin\AdminHomepageController@category')->name('homepage.category.list');
 Route::get('/home', 'HomepageController@index')->name('homepage.index');
 Route::get('/', 'Admin\AdminController@index')->name('admin.index');

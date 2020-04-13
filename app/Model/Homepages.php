@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Homepages extends Model
 {
+    protected $table = 'homepages';
     protected $guarded = [];
 
     public function media() {

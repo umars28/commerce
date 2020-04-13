@@ -5,13 +5,14 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Charts</span>
+            <span>Homepages</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="{{ route('homepage.editMainContent') }}"><i class="fa fa-circle-o"></i> Main Content</a></li>
+            <li><a href="{{ route('homepage.category.list') }}"><i class="fa fa-circle-o"></i> Category</a></li>
             <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
           </ul>
         </li>
@@ -57,7 +58,7 @@
             <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
           </ul>
         </li>
-        
+
       </ul>
     </section>
     <!-- /.sidebar -->
